@@ -3,7 +3,7 @@
 ### Author: James Dunn
 
 ### Table of Contents
-* [Challenge 01](http://xyz.com)
+* [Challenge 01](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/1)
 
 #### Documentation
 * [jsdoc](http://xyz.com) (Server assignments)
