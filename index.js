@@ -22,9 +22,9 @@ app.get('/', requestHandler);
 function requestHandler(req,res) {
     res.setHeader('Content-Type', 'text/html');
     res.statusCode = 200;
-    res.write(  );
+    // res.write(  );
     res.end();
 }
 
-app.listen(process.env.PORT, () => console.log('server up') );
+app.listen(process.env.PORT, () => console.log(`server up on port ${process.env.PORT}`));
 

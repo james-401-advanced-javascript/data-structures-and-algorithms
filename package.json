@@ -1,7 +1,7 @@
 {
-  "name": "401-js-proof-of-life",
+  "name": "401-data-structures-and-algorithms",
   "version": "1.0.0",
-  "description": "Proof of Life",
+  "description": "Code Challenges",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

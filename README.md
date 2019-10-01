@@ -3,7 +3,7 @@
 ### Author: James Dunn
 
 ### Table of Contents
-* [Challenge 01](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/1)
+* [Challenge 01](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/2)
 
 #### Documentation
 * [jsdoc](https://cf-401-dsaa.herokuapp.com/docs/)
