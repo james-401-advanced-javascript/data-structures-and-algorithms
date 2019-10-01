@@ -6,7 +6,7 @@
 * [Challenge 01](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/1)
 
 #### Documentation
-* [jsdoc](http://xyz.com) (Server assignments)
+* [jsdoc](https://cf-401-dsaa.herokuapp.com/docs/)
 
 #### Running the tests
 * `npm test`
