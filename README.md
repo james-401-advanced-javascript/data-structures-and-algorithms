@@ -6,7 +6,7 @@
 * [Challenge 01](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/1)
 
 #### Documentation
-* [jsdoc](http://xyz.com) (Server assignments)
+* [jsdoc](./docs/index.html) (Reverse array assignments)
 
 #### Running the tests
 * `npm test`
