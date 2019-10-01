@@ -1,6 +1,6 @@
 'use strict';
 
-let arr = require('../challenges/arrayReverse/array-reverse');
+let arr = require('../array-reverse');
 
 describe('array reverse', () => {
 
