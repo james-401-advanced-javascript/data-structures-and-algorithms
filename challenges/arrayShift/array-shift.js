@@ -48,9 +48,4 @@ const insertShiftArray = (arrParam, val) => {
     return arrCopy;
 };
 
-console.log(evenArray); // [2,4,5,6,8]
-console.log(insertShiftArray(evenArray, 5)); // [2,4,5,6,8]
-console.log(oddArray); // [4,8,15,16,23,42]
-console.log(insertShiftArray(oddArray, 16)); // [4,8,15,16,23,42]
-
 module.exports = exports = insertShiftArray;
