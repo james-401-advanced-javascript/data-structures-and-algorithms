@@ -1,16 +1,10 @@
 'use strict';
 
-let arr = require('../array-reverse');
+let arrayReverse = require('../array-reverse');
 
 describe('array reverse', () => {
 
-    it('takes in an array', () => {
-    
-    // expect;
+    it('returns reversed array', () => {
+        expect(arrayReverse([1,2,3])).toEqual([3,2,1]);
     });
-
-    it('reverses elements in array', () => {
-    // expect;
-    });
-
 });
