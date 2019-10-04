@@ -5,6 +5,8 @@
 ### Table of Contents
 * [challenge 01](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/2)
 
+* [challenge 02](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/3)
+
 #### Links & Resources
 * [travis](https://www.travis-ci.com/james-401-advanced-javascript/data-structures-and-algorithms)
 
