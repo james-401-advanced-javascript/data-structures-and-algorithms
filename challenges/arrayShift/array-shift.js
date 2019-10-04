@@ -9,9 +9,6 @@
  * If array has odd number of items, add 1 to array.length then divide that value by 2, then put value at index of result
  */
 
-let evenArray = [2,4,6,8];
-let oddArray = [4,8,15,23,42];
-
 const insertShiftArray = (arrParam, val) => {
     let arr = arrParam;
     let len = arr.length;
