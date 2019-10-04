@@ -10,7 +10,7 @@
     "test-watch": "jest --watchAll --verbose --coverage",
     "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
   },
-  "author": "John Cokos",
+  "author": "James Dunn",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^6.1.0",

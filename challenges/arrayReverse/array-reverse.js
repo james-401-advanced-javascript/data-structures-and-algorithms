@@ -15,3 +15,5 @@ const arrayReverse = arr => {
     }
     return arrCopy;
 };
+
+module.exports = arrayReverse;

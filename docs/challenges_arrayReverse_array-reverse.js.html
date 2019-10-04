@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: index</title>
+    <title>JSDoc: Source: challenges/arrayReverse/array-reverse.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,132 +17,36 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: index</h1>
+    <h1 class="page-title">Source: challenges/arrayReverse/array-reverse.js</h1>
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-            <div class="description">Simple Server</div>
-        
-
-        
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line3">line 3</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+/**
+ * / arrayReverse
+ * @param arr
+ * The goal is to write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order. This function will first declare an empty array.
+ * Then it will loop through the input array.
+ * Each index will be placed at the beginning of the empty array using unshift().
+ * Then the new array copy will be returned with the elements of the input array reversed.
+ */
+
+const arrayReverse = arr => {
+    let arrCopy = [];
+    for (let item of arr) {
+        arrCopy.unshift(item);
+    }
+    return arrCopy;
+};
+
+module.exports = arrayReverse;</code></pre>
+        </article>
+    </section>
 
 
 
