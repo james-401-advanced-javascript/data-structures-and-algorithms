@@ -10,7 +10,8 @@ list.insert('Node3');
 list.insert('Node2');
 list.insert('Node1');
 list.insert('Node0');
+console.log(list.insert('Node0'));
 
-console.log(list.includes('Node0'));
-console.log(list.includes('Node44'));
-console.log(list.toString());
+// console.log(list.includes('Node0'));
+// console.log(list.includes('Node44'));
+// console.log(list.toString());
