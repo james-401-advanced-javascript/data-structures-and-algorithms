@@ -43,7 +43,7 @@ class LinkedList {
         }
     }
 
-    // Return the entire linked list
+    // Return the entire linked list in a string
     toString() {
         let current = this.head;
         let response = 'Linked List: \n';
