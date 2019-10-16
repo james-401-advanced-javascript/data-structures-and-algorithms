@@ -33,3 +33,7 @@
 
 - toString()
   - This function takes in no arguments and returns a string representing all the values in the linked list.
+
+## Solution
+
+![UML](./assets/linked-list.jpg)
