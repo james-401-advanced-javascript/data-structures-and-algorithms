@@ -9,8 +9,8 @@ class LinkedList {
 
     // insert = add to beginning of list
     insert(value) {
-        if (!value) {
-            throw Error;
+        if (value === undefined) {
+            throw Error('Must pass in a value');
         }
         let node = new Node(value);
 
@@ -32,7 +32,7 @@ class LinkedList {
     // add a new node with the given newValue immediately before the first value node
     insertBefore(value, newVal) {
         if (value === undefined || newVal === undefined) {
-            throw Error('Must inlude value and newValue');
+            throw Error('Must pass in a value and newValue');
         }
         let node = new Node(newVal);
         let current = this.head;
@@ -59,7 +59,7 @@ class LinkedList {
     // add a new node with the given newValue immediately after the first value node
     insertAfter(value, newVal) {
         if (value === undefined || newVal === undefined) {
-            throw Error('Must inlude value and newValue');
+            throw Error('Must pass in a value and newValue');
         }
         let node = new Node(newVal);
         let current = this.head;
@@ -87,8 +87,8 @@ class LinkedList {
 
     // A function called includes which takes in a value and returns a boolean if that value exists in the linked list
     includes(value) {
-        if (!value) {
-            throw Error;
+        if (value === undefined) {
+            throw Error('Must pass in a value');
         }
         let current = this.head;
         while (current.next) {
@@ -108,7 +108,7 @@ class LinkedList {
     // Return the entire linked list in a string
     toString() {
         if (!this.head) {
-            console.log('The Linked List is empty');
+            throw Error('The Linked List is empty');
         }
         let current = this.head;
         let response = 'Linked List: \n';
@@ -120,8 +120,8 @@ class LinkedList {
     }
 
     append(value) {
-        if (!value) {
-            throw Error;
+        if (value === undefined) {
+            throw Error('Must pass in a value');
         }
         let node = new Node(value);
 
@@ -149,9 +149,6 @@ class LinkedList {
             current = current.next;
         }
         current.next = node;
-
-        // current.next = node;
-
         return this;
     }
 }
