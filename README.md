@@ -3,17 +3,23 @@
 ### Author: James Dunn
 
 ### Table of Contents
-* [challenge 01](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/2)
 
-* [challenge 02](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/3)
+- [challenge 01](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/2)
 
-* [challenge 03](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/4)
+- [challenge 02](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/3)
+
+- [challenge 03](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/4)
+- [challenge 05](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/5)
+- [challenge 06](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/6)
 
 #### Links & Resources
-* [travis](https://www.travis-ci.com/james-401-advanced-javascript/data-structures-and-algorithms)
+
+- [travis](https://www.travis-ci.com/james-401-advanced-javascript/data-structures-and-algorithms)
 
 #### Documentation
-* [jsdoc](https://cf-401-dsaa.herokuapp.com/docs/)
+
+- [jsdoc](https://cf-401-dsaa.herokuapp.com/docs/)
 
 #### Running the tests
-* `npm test`
+
+- `npm test`
