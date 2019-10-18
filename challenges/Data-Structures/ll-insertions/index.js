@@ -3,15 +3,15 @@
 let LinkedList = require('./lib/linked-list');
 
 let list = new LinkedList();
-console.log(list.toString());
+
 list.insert('Node5');
 list.insert('Node3');
 list.insert('Node2');
 list.insert('Node1');
 list.insert('Node0');
-console.log(list.toString());
-
-list.insertBefore();
+list.append('Node6');
+list.append('Node7');
+console.log(list.toString().slice(-19, -1));
 
 // list.insertAfter('Node3', 'Node4');
 // console.log(list.toString());

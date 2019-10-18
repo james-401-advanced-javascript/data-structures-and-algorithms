@@ -36,17 +36,16 @@ class LinkedList {
         }
         let node = new Node(newVal);
         let current = this.head;
-        // value = 4
-        // newVal = 3
-        // current = 2
-        // 1 --> 2 --> 4 --> 5
-        // 1 --> 2 -->
         // loop through linked list
         // if current.next.data === value
         // then newVal.next = current.next
         // and current.next = node;
         while (current.next) {
-            if (current.next.data === value) {
+            if (this.head.data === value) {
+                node.next = this.head;
+                this.head = node;
+                break;
+            } else if (current.next.data === value) {
                 node.next = current.next;
                 current.next = node;
                 break;
@@ -63,18 +62,17 @@ class LinkedList {
         }
         let node = new Node(newVal);
         let current = this.head;
-        // value = 5
-        // newVal = 4
-        // current = 3
-        // 1 --> 2 --> 3 --> 5
-        // 1 --> 2 --> 3 -->
         // evaluate off of current.next in case inserting at end of list (even though append does this)
         // loop through linked list
         // if current.next.data === value
         // then node.next = current.next.next
         // and current.next.next = node;
         while (current.next) {
-            if (current.next.data === value) {
+            if (this.head.data === value) {
+                node.next = this.head.next;
+                this.head.next = node;
+                break;
+            } else if (current.next.data === value) {
                 node.next = current.next.next;
                 current.next.next = node;
                 break;

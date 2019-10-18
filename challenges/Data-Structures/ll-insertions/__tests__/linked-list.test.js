@@ -26,6 +26,46 @@ describe('The functionality of a linked list', () => {
         newList.append('Node2');
         expect(newList.toString().slice(-7, -1)).toMatch('Node2');
     });
+    it('Can successfully add multiple nodes to the end of a linked list', () => {
+        list.append('Node3');
+        list.append('Node4');
+        list.append('Node5');
+        expect(list.toString().slice(-19, -1)).toMatch('Node4 --> Node5');
+    });
+    it('Can successfully insert a node before the first node of a linked list', () => {
+        let newList = new linkedList();
+        newList.insert('Node3');
+        newList.insert('Node2');
+        newList.insert('Node1');
+        newList.insertBefore('Node1', 'Node0');
+        expect(newList.toString().slice(14, 19)).toMatch('Node0');
+    });
+    it('Can successfully insert a node before a node located in the middle of a linked list', () => {
+        let newList = new linkedList();
+        newList.insert('Node5');
+        newList.insert('Node4');
+        newList.insert('Node2');
+        newList.insert('Node1');
+        newList.insertBefore('Node4', 'Node3');
+        expect(newList.toString().slice(48, 53)).toMatch('Node3');
+    });
+    it('Can successfully insert after a node in the middle of the linked list', () => {
+        let newList = new linkedList();
+        newList.insert('Node5');
+        newList.insert('Node4');
+        newList.insert('Node2');
+        newList.insert('Node1');
+        newList.insertAfter('Node2', 'Node3');
+        expect(newList.toString().slice(48, 53)).toMatch('Node3');
+    });
+    it('Can successfully insert a node after the last node of the linked list', () => {
+        let newList = new linkedList();
+        newList.insert('Node3');
+        newList.insert('Node2');
+        newList.insert('Node1');
+        newList.insertAfter('Node3', 'Node4');
+        expect(newList.toString().slice(-7, -1)).toMatch('Node4');
+    });
     it('The head property will properly point to the first node in the linked list', () => {
         let newList = list;
         newList.insert('Node3');
