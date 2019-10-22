@@ -9,8 +9,12 @@
 - [challenge 02](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/3)
 
 - [challenge 03](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/4)
+
 - [challenge 05](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/5)
+
 - [challenge 06](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/6)
+
+- [challenge 07](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/7)
 
 #### Links & Resources
 
