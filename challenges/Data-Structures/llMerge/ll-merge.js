@@ -4,7 +4,6 @@ let LinkedList = require('./lib/linked-list');
 
 let list1 = new LinkedList();
 let list2 = new LinkedList();
-let list3 = new LinkedList();
 
 list1.insert('Node5');
 list2.insert('Node6');
