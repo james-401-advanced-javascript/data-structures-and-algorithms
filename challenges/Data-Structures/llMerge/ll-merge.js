@@ -4,15 +4,10 @@ let LinkedList = require('./lib/linked-list');
 
 let list1 = new LinkedList();
 let list2 = new LinkedList();
+let list3 = new LinkedList();
 
-list1.insert('Node8');
-list1.insert('Node7');
-list1.insert('Node5');
-list1.insert('Node3');
 list1.insert('Node1');
 
-list2.insert('Node6');
-list2.insert('Node4');
 list2.insert('Node2');
 
 console.log(list1.toString());
@@ -24,8 +19,8 @@ console.log(list2.toString());
 // Create function that takes in two lists
 function mergeLists(listA, listB) {
     // make sure both lists are not null
-    if (!listA || !listB) {
-        console.log('This function requires two functions');
+    if (!listA || !listB || !listA.head || !listB.head) {
+        console.log('This function requires two linked lists');
         return -1;
     }
     // create new linked list
@@ -50,6 +45,9 @@ function mergeLists(listA, listB) {
         }
     }
     console.log(newList.toString());
+    return newList.toString();
 }
 
 mergeLists(list1, list2);
+
+module.exports = mergeLists;
