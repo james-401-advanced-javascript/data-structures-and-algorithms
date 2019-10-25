@@ -1,4 +1,4 @@
-# Code Challenge 08 - Merge Two Linked Lists
+# Code Challenge 08 - Merge Two Singly Linked Lists
 
 - The point of this code challenge is to merge two linked lists into one.
 
