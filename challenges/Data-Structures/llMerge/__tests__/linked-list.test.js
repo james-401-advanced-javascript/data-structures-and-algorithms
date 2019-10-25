@@ -126,33 +126,46 @@ describe('The functionality of a linked list', () => {
     });
 
     // Challenge 08 - Linked List Merge
-    it('Where list1 is the same length as list2', () => {
-        let newList = new linkedList();
-        newList.insert('Node1');
-        newList.insert('Node6');
+    test('Where list1 is the same length as list2', () => {
+        let list1 = new linkedList();
+        let list2 = new linkedList();
+        list1.insert('Node5');
+        list2.insert('Node6');
+        list1.insert('Node3');
+        list2.insert('Node4');
+        list1.insert('Node1');
+        list2.insert('Node2');
+        expect(mergeLists(list1, list2).data).toBe('Node1');
     });
-    it('Where list1 is shorter than list2', () => {
-        let newList = new linkedList();
-        newList.insert('Node1');
-        newList.insert('Node6');
+    test('Where list1 is shorter than list2', () => {
+        let list1 = new linkedList();
+        let list2 = new linkedList();
+        list2.insert('Node4');
+        list2.insert('Node3');
+        list2.insert('Node2');
+        list1.insert('Node1');
+        expect(mergeLists(list1, list2).data).toBe('Node1');
     });
-    it('Where list1 is longer than list2', () => {
-        let newList = new linkedList();
-        newList.insert('Node1');
-        newList.insert('Node6');
+    test('Where list1 is longer than list2', () => {
+        let list1 = new linkedList();
+        let list2 = new linkedList();
+        list1.insert('Node4');
+        list2.insert('Node2');
+        list1.insert('Node3');
+        list1.insert('Node1');
+        expect(mergeLists(list1, list2).data).toBe('Node1');
     });
-    it('Where list1 is null', () => {
-        let newList = new linkedList();
-        newList.insert('Node1');
-        newList.insert('Node6');
+    test('Where list1 is null', () => {
+        let list1 = new linkedList();
+        let list2 = new linkedList();
+        list1.insert('Node1');
+        expect(mergeLists(list1, list2)).toBe(-1);
     });
-    it('Where both lists are of length 1', () => {
+    test('Where both lists are of length 1', () => {
         let list1 = new linkedList();
         let list2 = new linkedList();
         list1.insert('Node1');
         list2.insert('Node2');
-        expect(mergeLists(list1, list2)).toBe(
-            'Linked List: \n' + `Node1 --> Node2 \n`
-        );
+        expect(mergeLists(list1, list2).data).toBe('Node1');
     });
 });

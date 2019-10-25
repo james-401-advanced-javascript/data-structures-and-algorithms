@@ -6,8 +6,11 @@ let list1 = new LinkedList();
 let list2 = new LinkedList();
 let list3 = new LinkedList();
 
+list1.insert('Node5');
+list2.insert('Node6');
+list1.insert('Node3');
+list2.insert('Node4');
 list1.insert('Node1');
-
 list2.insert('Node2');
 
 console.log(list1.toString());
@@ -44,8 +47,8 @@ function mergeLists(listA, listB) {
             indexB = indexB.next;
         }
     }
-    console.log(newList.toString());
-    return newList.toString();
+    // console.log(newList.toString());
+    return newList.head;
 }
 
 mergeLists(list1, list2);
