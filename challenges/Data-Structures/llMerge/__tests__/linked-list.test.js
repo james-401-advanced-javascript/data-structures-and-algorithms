@@ -123,4 +123,7 @@ describe('The functionality of a linked list', () => {
     it('Where k is not at the end, but somewhere in the middle of the linked list', () => {
         expect(testList.kthFromEnd(2)).toBe('Node1');
     });
+
+    // Challenge 08 - Linked List Merge
+    
 });
