@@ -10,7 +10,8 @@ class Stack {
     // push = add to beginning of list
     push(value) {
         if (value === undefined) {
-            throw Error('Must pass in a value');
+            console.error('Must pass in a value');
+            return -1;
         }
         let node = new Node(value);
 
@@ -38,8 +39,19 @@ class Stack {
             return -1;
         }
         let temp = this.top;
+        temp.next = null;
         this.top = this.top.next;
         return temp.data;
+    }
+
+    peek() {
+    // If there is no top, that must mean that the stack is empty
+    // return -1 if stack is empty
+        if (!this.top) {
+            console.log('The stack is empty');
+            return -1;
+        }
+        return this.top.data;
     }
 }
 
