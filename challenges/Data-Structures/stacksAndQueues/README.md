@@ -30,11 +30,29 @@
 
 ## Approach & Efficiency
 
-- For this challenge, I chose first to write comments explaining what the goals were for each function. I wanted to make the code as clean as possible, but still expressive. The logic was fairly straight-forward since these were so similar to linked lists. As for the verification, I chose to run the console.log the stacks and queues in order to confirm the expected result.
-
-<!-- EDIT ALL OF THIS BELOW -->
+- For this challenge, I chose first to write comments explaining what the goals were for each function. I wanted to make the code as clean as possible, but still expressive. The logic was fairly straight-forward since these were so similar to linked lists. As for the verification, I chose to run the console.log on the stacks and queues in order to confirm the expected result. I've made the Big O of all of the operations O(1).
 
 ## API
 
-- mergeLists(list1, list2)
-  - This function takes in two lists as parameters, and return the head of the new list which alternates values, and the head of this new list.
+- Stack.push(obj)
+
+  - This function takes in an object and pushes that to the top of an instantiated stack.
+
+- Stack.pop()
+
+  - This function pops and returns the node at the top of the instantiated stack.
+
+- Stack.peek()
+
+  - This function the value of the node at the top of an instantiated stack.
+
+- Queue.enqueue(obj)
+
+  - This function takes in an object and enqueues that to the front of an instantiated queue.
+
+- Queue.dequeue()
+
+  - This function dequeues and returns the node at the front of the instantiated queue.
+
+- Queue.peek()
+  - This function the value of the node at the front of an instantiated queue.
