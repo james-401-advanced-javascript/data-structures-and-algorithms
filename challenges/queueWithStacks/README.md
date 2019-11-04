@@ -1,0 +1,51 @@
+# Code Challenge 10 - Pseudo Queue
+
+## Links
+
+- [challenge 10](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/10)
+- [travis](https://www.travis-ci.com/james-401-advanced-javascript/data-structures-and-algorithms)
+
+* The point of this code challenge is to implement a Queue using two Stacks.
+
+## Challenge
+
+- Create a brand new PseudoQueue class. Do not use an existing Queue. Instead, this PseudoQueue class will implement our standard queue interface (the two methods listed below), but will internally only utilize two Stack objects.
+
+- Ensure that you create your class with the following methods:
+
+  - enqueue(value) which inserts value into the PseudoQueue, using a last-in, last-out approach.
+
+  - dequeue() which extracts a value from the PseudoQueue, using a first-in, first-out approach.
+
+  - The Stack instances have only push, pop, and peek methods. You should use your own Stack implementation.
+
+  - Instantiate these Stack objects in your PseudoQueue constructor.
+
+## Approach & Efficiency
+
+- For this challenge, I chose to first draw a diagram of what I was trying to accomplish. Then I wrote comments explaining what the goals were for each function. I focused much more on edge cases and making sure the class was functioning as intended. As for the verification, I chose to run the console.log on the queue in order to confirm the expected result. I believe the Big O of all of the operations is O2(n).
+
+## API
+
+- Stack.push(obj)
+
+  - This function takes in an object and pushes that to the top of an instantiated stack.
+
+- Stack.pop()
+
+  - This function pops and returns the node at the top of the instantiated stack.
+
+- Stack.peek()
+
+  - This function the value of the node at the top of an instantiated stack.
+
+- Queue.enqueue(obj)
+
+  - This function takes in an object and enqueues that to the front of an instantiated queue using a Stack.
+
+- Queue.dequeue()
+
+  - This function dequeues and returns the node at the front of the instantiated queue using a Stack.
+
+- Queue.peek()
+  - This function the value of the node at the front of an instantiated queue.
