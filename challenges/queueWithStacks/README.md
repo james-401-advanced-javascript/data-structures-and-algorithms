@@ -27,25 +27,10 @@
 
 ## API
 
-- Stack.push(obj)
+- PseudoQueue.enqueue(obj)
 
-  - This function takes in an object and pushes that to the top of an instantiated stack.
+  - This function takes in an object and enqueues that to the front of an instantiated pseudoqueue using a Stack's functionality.
 
-- Stack.pop()
+- PseudoQueue.dequeue()
 
-  - This function pops and returns the node at the top of the instantiated stack.
-
-- Stack.peek()
-
-  - This function the value of the node at the top of an instantiated stack.
-
-- Queue.enqueue(obj)
-
-  - This function takes in an object and enqueues that to the front of an instantiated queue using a Stack.
-
-- Queue.dequeue()
-
-  - This function dequeues and returns the node at the front of the instantiated queue using a Stack.
-
-- Queue.peek()
-  - This function the value of the node at the front of an instantiated queue.
+  - This function dequeues and returns the node at the front of the instantiated pseudoqueue using a Stack's functionality.
