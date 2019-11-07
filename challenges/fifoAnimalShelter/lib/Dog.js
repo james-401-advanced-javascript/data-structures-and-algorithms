@@ -5,6 +5,7 @@ class Dog {
         this.name = name;
         this.print = function() {
             console.log(`${name} is a sweet dog!`);
+            return `${name} is a sweet dog!`;
         };
     }
 }

@@ -20,9 +20,23 @@ describe('The proper functionality of the Animal Shelter queue', () => {
             'This queue is only for cats and dogs'
         );
     });
-    it('Can successfully dequeue a Dog', () => {});
-    it('Can successfully dequeue a Cat', () => {});
-    it('Can successfully dequeue the front of the AnimalShelter queue when you pass no parameters to dequeue', () => {});
-    it('Error handling when you try to dequeue something that is neither a "cat", "dog" or an empty string', () => {});
-    it('Can successfully print the resulting object from a dequeue action', () => {});
+    it('Can successfully dequeue a Dog', () => {
+        expect(shelter.dequeue('dog').name).toBe('Fido');
+    });
+    it('Can successfully dequeue a Cat', () => {
+        shelter.enqueue(new Cat('Garfield'));
+        expect(shelter.dequeue('cat').name).toBe('Felix');
+    });
+    it('Can successfully dequeue the front of the AnimalShelter queue when you pass no parameters to dequeue', () => {
+        let front = shelter.front.data;
+        expect(shelter.dequeue().name).toBe(front.name);
+    });
+    it('Error handling when you try to dequeue something that is neither a "cat", "dog" or an empty string', () => {
+        expect(shelter.dequeue('')).toBe(-1);
+    });
+    it('Can successfully print the resulting object from a dequeue action', () => {
+        shelter.enqueue(new Cat('Max'));
+        shelter.enqueue(new Dog('Fang'));
+        expect(shelter.dequeue().print()).toBe('Max is a sweet cat!');
+    });
 });
