@@ -33,3 +33,13 @@
 - AnimalShelter.dequeue(string)
 
   - This function takes an optional string argument. If the string says 'cat', it removes the first cat from the front of the queue and runs its print() method. If the string says 'dog', it does the same action for the first dog object in the queue. If no argument is provided or an empty string is provided, it dequeues and returns whichever node/animal is at the front of the instantiated AnimalShelter queue.
+
+- Dog.print()
+
+  - This function is on every Dog object and it prints the name of the instantiated dog it's called on in the following format:
+    - \${name} is a good dog!
+
+- Cat.print()
+
+  - This function is on every Cat object and it prints the name of the instantiated cat it's called on in the following format:
+    - \${name} is a sweet cat!
