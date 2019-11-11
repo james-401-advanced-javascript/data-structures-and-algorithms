@@ -1,4 +1,4 @@
-# Code Challenge 13 - Binary Search Tree
+# Code Challenge 13 - Trees
 
 ## Links
 
@@ -16,28 +16,28 @@
   - An inOrder method that traverses the tree using the pattern left >> root >> right and returns an array of the traversed values
   - A postOrder method that traverses the tree using the pattern left >> right >> root and returns an array of the traversed values
 
-<!-- FINISH CODE BENEATH THIS POINT -->
-
 ## Approach & Efficiency
 
-- For this challenge, I chose to first draw a diagram of what I was trying to accomplish. Then I wrote comments explaining what the goals were for each function. I made sure to write code to account for any potential errors and edge cases including the desired animal being the only one in the queue or located at the end of the queue. As for the verification, I chose to run the print method on the animal object that was being dequeued. I also returned the string console.logged by the same method in order to confirm the correct output in jest testing. I believe the Big O of all of the operations is O(n) because no additional data structures are created (as far as space goes) and at most, the queue will be iterated over only as many times as there are objects or nodes inside of it.
+- For this challenge, I chose to first draw a diagram of what I was trying to accomplish. Then I wrote comments explaining what the goals were for each function. I made sure to write code to account for any potential errors and edge cases including receiving correct values. As for testing, I checked the return values to make sure they were correct in jest. I believe the Big O of my binaryTree operations is On(n log n) in space since a new array is being created in each recursive loop and the contents returned using destructuring. I'm referring to preOrder, inOrder, and postOrder here. For time, I believe it's O(log n) because the options are cut in half through each loop. I believe Big O for time and space for add and contains functions are also O(log n) because the options are halfed each recursive iteration.
 
 ## API
 
-- AnimalShelter.enqueue(obj)
+- BinaryTree.preOrder()
 
-  - This function takes in only either an object from the Dog class or the Cat class, and enqueues that to the front of an instantiated AnimalShelter queue.
+  - This method traverses the tree using the pattern root >> left >> right and returns an array of the traversed values.
 
-- AnimalShelter.dequeue(string)
+- BinaryTree.inOrder()
 
-  - This function takes an optional string argument. If the string says 'cat', it removes the first cat from the front of the queue and runs its print() method. If the string says 'dog', it does the same action for the first dog object in the queue. If no argument is provided or an empty string is provided, it dequeues and returns whichever node/animal is at the front of the instantiated AnimalShelter queue.
+  - This method traverses the tree using the pattern left >> root >> right and returns an array of the traversed values.
 
-- Dog.print()
+- BinaryTree.postOrder()
 
-  - This function is on every Dog object and it prints the name of the instantiated dog it's called on in the following format:
-    - \${name} is a good dog!
+  - This method traverses the tree using the pattern left >> right >> root and returns an array of the traversed values.
 
-- Cat.print()
+- BinarySearchTree.add(val)
 
-  - This function is on every Cat object and it prints the name of the instantiated cat it's called on in the following format:
-    - \${name} is a sweet cat!
+  - This method accepts a value and adds a new Node with that value in the correct location in the binary search tree.
+
+- BinarySearchTree.contains(val)
+
+  - This method accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
