@@ -20,6 +20,36 @@ class BinaryTree {
         }
         return arr;
     }
+
+    inOrder(root) {
+        let arr = [];
+
+        if (root.left) {
+            arr.push(...this.inOrder(root.left.root));
+        }
+
+        arr.push(root.value);
+
+        if (root.right) {
+            arr.push(...this.inOrder(root.right.root));
+        }
+        return arr;
+    }
+
+    postOrder(root) {
+        let arr = [];
+
+        if (root.left) {
+            arr.push(...this.postOrder(root.left.root));
+        }
+
+        if (root.right) {
+            arr.push(...this.postOrder(root.right.root));
+        }
+
+        arr.push(root.value);
+        return arr;
+    }
 }
 
 let tree = new BinaryTree(1);
@@ -32,4 +62,4 @@ tree.root.left.root.right = new BinaryTree(5);
 tree.root.right.root.left = new BinaryTree(6);
 tree.root.right.root.right = new BinaryTree(7);
 
-console.log(tree.preOrder(tree.root));
+console.log(tree.postOrder(tree.root));
