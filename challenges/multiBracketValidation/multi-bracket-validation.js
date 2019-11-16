@@ -53,14 +53,8 @@ function multiBracketValidation(str) {
     }
 }
 
-console.log(multiBracketValidation('{}'));
-console.log(multiBracketValidation('{}(){}'));
-console.log(multiBracketValidation('()[[Extra Characters]]'));
-console.log(multiBracketValidation('(){}[[]]'));
-console.log(multiBracketValidation('{}{Code}[Fellows](())'));
-console.log(multiBracketValidation('[({}]'));
-console.log(multiBracketValidation('(]('));
-console.log(multiBracketValidation('{(})'));
+module.exports = multiBracketValidation;
+
 
 // {}	                    TRUE
 // {}(){}	                TRUE
