@@ -1,7 +1,5 @@
 'use strict';
 
-const BinaryTree = require('./lib/binary-tree');
-
 /*
 This tree can be any binary tree with number values on its Nodes
 Without utilizing any built-in methods available in JavaScript, determine whether or not the value of each Node is divisible by 3 and/or 5 and change the value of each of the nodes:
@@ -15,8 +13,10 @@ function FizzBuzzTree(node) {
     // Error checking to make sure value is passed in
     if (!node) return 'Must pass in a node';
     // Error checking to make sure node is passed in and its value is a number
-
-    if (node.constructor.name !== 'Node' || typeof node.root.value !== 'number')
+    if (
+        node.constructor.name !== 'BinaryTree' ||
+    typeof node.root.value !== 'number'
+    )
         return 'Node must have a number value';
 
     let root = node.root;
@@ -37,14 +37,4 @@ function FizzBuzzTree(node) {
     return node;
 }
 
-let tree = new BinaryTree(15);
-tree.root.left = new BinaryTree(11);
-tree.root.right = new BinaryTree(2);
-tree.root.left.root.left = new BinaryTree(32);
-tree.root.left.root.right = new BinaryTree(50);
-tree.root.right.root.right = new BinaryTree(12);
-
-let foo = FizzBuzzTree();
-
-console.log(foo);
 module.exports = FizzBuzzTree;
