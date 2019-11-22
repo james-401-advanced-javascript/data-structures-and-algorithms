@@ -28,6 +28,8 @@
 
 - [challenge 14](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/13)
 
+- [challenge 16](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/14)
+
 #### Links & Resources
 
 - [travis](https://www.travis-ci.com/james-401-advanced-javascript/data-structures-and-algorithms)
