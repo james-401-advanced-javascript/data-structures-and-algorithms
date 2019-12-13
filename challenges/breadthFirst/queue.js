@@ -42,7 +42,7 @@ class Queue {
         let temp = this.front;
         this.front = this.front.next;
         temp.next = null;
-        return temp.data;
+        return temp.value;
     }
 
     peek() {
@@ -52,7 +52,7 @@ class Queue {
             console.log('The queue is empty');
             return -1;
         }
-        return this.front.data;
+        return this.front.value;
     }
 }
 

@@ -6,6 +6,7 @@ class Node {
         this.left = null;
         this.right = null;
         this.seen = null;
+        this.next = null;
     }
 }
 
