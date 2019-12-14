@@ -11,50 +11,26 @@ class BinaryTree {
 
     // A breadthFirst methods that traverses the tree using the breadth-first traversal pattern
     breadthFirst() {
-        // Print current value
-        // if (!this.root) {
-        //     return -1;
-        // }
-        if (this.root) {
-            if (!this.root.seen) {
-                this.queue.enqueue(this.root);
-                this.seen = false;
+        // VAR seen = ARRAY
+        // 1. Add root to queue
+        this.queue.enqueue(this.root);
+        // 2. While queue is NOT empty
+        while(this.queue.peek() !== -1) {
+            // A. var current = queue.dequeue()
+            let current = this.queue.dequeue();
+            // B. IF ![seen].contains(current) --> [seen].push(current) --> OUTPUT: current
+            if (!current.seen) {
+                current.seen = true;
+                console.log(current.value);
             }
-            // if (this.root.left) {
-            //     this.queue.enqueue(this.root.left);
-            // }
-            // if (this.root.right) {
-            //     this.queue.enqueue(this.root.right);
-            // }
-        }
-
-        this.queue.enqueue(this);
-        this.seen = true;
-
-        // Then put left child in queue
-        if (this.left) {
-            this.queue.enqueue(this.left.value);
-        }
-
-        // Then put right child in queue
-        if (this.right) {
-            this.queue.enqueue(this.right.value);
-        }
-        
-        //// While queue is not empty, do same thing to items in queue
-        while(this.queue.length) {
-            // console.log('QUEUEUE: ',this.queue.front);
-            console.log(this.queue.front.value.value);
-            this.queue.dequeue();
-        }
-
-        // Call same function on child nodes
-        if (this.left) {
-            this.breadthFirst(this.left);
-        }
-
-        if (this.right) {
-            this.breadthFirst(this.right);
+            // C. IF current.left --> queue.push(LEFT)
+            if (current.left) {
+                this.queue.enqueue(current.left);
+            }
+            // D. IF current.right --> queue.push(RIGHT)
+            if (current.right) {
+                this.queue.enqueue(current.right);
+            }
         }
     }
     // A preOrder method that traverses the tree using the pattern root >> left >> right and returns an array of the traversed values
