@@ -5,7 +5,7 @@ class Node {
         this.value = value || null;
         this.left = null;
         this.right = null;
-        this.seen = null;
+        this.seen = false;
         this.next = null;
     }
 }

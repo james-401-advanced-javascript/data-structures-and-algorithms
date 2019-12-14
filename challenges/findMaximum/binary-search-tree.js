@@ -1,6 +1,7 @@
 'use strict';
 
 const BinaryTree = require('./binary-tree');
+const Node = require('./node');
 
 class BinarySearchTree extends BinaryTree {
     constructor(value) {
@@ -25,7 +26,7 @@ class BinarySearchTree extends BinaryTree {
         // if val is less than current val, place input val in left node path
         if (val < root.value) {
             if (!root.left) {
-                root.left = new BinarySearchTree(val);
+                root.left = new Node(val);
             } else {
                 root.left.add(val);
             }
@@ -34,7 +35,7 @@ class BinarySearchTree extends BinaryTree {
         // if val is greater than current val, place input val in right node path
         if (val > root.value) {
             if (!root.right) {
-                root.right = new BinarySearchTree(val);
+                root.right = new Node(val);
             } else {
                 root.right.add(val);
             }
@@ -65,16 +66,3 @@ class BinarySearchTree extends BinaryTree {
 }
 
 module.exports = BinarySearchTree;
-
-// let tree = new BinarySearchTree(100);
-
-// tree.root.left = new BinarySearchTree(50);
-
-// tree.root.right = new BinarySearchTree(200);
-// tree.root.left.root.left = new BinarySearchTree(25);
-// tree.root.left.root.right = new BinarySearchTree(75);
-// tree.root.right.root.left = new BinarySearchTree(155);
-
-// tree.add(82);
-
-// console.log(tree.contains(820));

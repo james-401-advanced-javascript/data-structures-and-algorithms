@@ -1,34 +1,48 @@
 'use strict';
 
 const Node = require('./node');
-const Queue = require('./queue');
+const Stack = require('./stack');
 
 class BinaryTree {
     constructor(root) {
         this.root = !root ? new Node() : new Node(root);
+        this.stack = root ? new Stack(root) : new Stack();
+        this.sum = 0;
     }
 
     // Find maximum value of all nodes within a numeric tree
-    // findMaximumBinaryTree() {
-    //     let arr = [];
-    //     if (this.root) {
-    //         // acc += this.root.value;
-    //         arr.push(this.root.value);
-    //     }
+    findMaximumBinaryTree(current) {
+        if (!current) {
+            if (!this.root.value) {
+                console.log('The tree appears to be empty');
+            } else {
+                if (!this.root.seen) {
+                    this.stack.push(this.root.value);
+                    this.root.seen = true;
+                }
+            }
+        }
 
-    //     if (this.left) {
-    //         arr.push(this.left.value);
-    //     }
-
-    //     if (this.right) {
-    //         arr.push(this.right.value);
-    //     }
-
-    //     if (this.left) {
-    //         this.left.findMaximumBinaryTree
-    //     }
-    // }
-
+        if (current) {
+            if (!current.seen) {
+                this.stack.push(current.value);
+                current.seen = true;
+                // IF (current.left) --> findMAX(current.left)
+                if (current.left) {
+                    this.findMaximumBinaryTree(current.left);
+                }
+                // IF (current.right) --> findMAX(current.right)
+                if (current.right) {
+                    this.findMaximumBinaryTree(current.right);
+                }
+                // RETURN acc
+                while (this.stack.peek() !== -1) {
+                    return this.sum += this.stack.pop();
+                }
+            }
+        }
+        return this.sum;
+    }
 
     // A preOrder method that traverses the tree using the pattern root >> left >> right and returns an array of the traversed values
     preOrder() {
