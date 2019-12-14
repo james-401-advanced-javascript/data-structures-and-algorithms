@@ -1,47 +1,42 @@
 'use strict';
 
 const Node = require('./node');
-const Stack = require('./stack');
+const Queue = require('./queue');
 
 class BinaryTree {
     constructor(root) {
         this.root = !root ? new Node() : new Node(root);
-        this.stack = root ? new Stack(root) : new Stack();
-        this.sum = 0;
+        this.queue = root ? new Queue(root) : new Queue();
     }
 
     // Find maximum value of all nodes within a numeric tree
-    findMaximumBinaryTree(current) {
-        if (!current) {
-            if (!this.root.value) {
-                console.log('The tree appears to be empty');
-            } else {
-                if (!this.root.seen) {
-                    this.stack.push(this.root.value);
-                    this.root.seen = true;
+    findMaximumBinaryTree() {
+         let max = 0;
+         // VAR seen = ARRAY
+        // 1. Add root to queue
+        this.queue.enqueue(this.root);
+        // 2. While queue is NOT empty
+        while(this.queue.peek() !== -1) {
+            // A. var current = queue.dequeue()
+            let current = this.queue.dequeue();
+            // B. IF ![seen].contains(current) --> [seen].push(current) --> IF (current > max) --> max = current
+            if (!current.seen) {
+                current.seen = true;
+                if (current.value > max) {
+                    max = current.value;
                 }
+            }
+            // C. IF current.left --> queue.push(LEFT)
+            if (current.left) {
+                this.queue.enqueue(current.left);
+            }
+            // D. IF current.right --> queue.push(RIGHT)
+            if (current.right) {
+                this.queue.enqueue(current.right);
             }
         }
 
-        if (current) {
-            if (!current.seen) {
-                this.stack.push(current.value);
-                current.seen = true;
-                // IF (current.left) --> findMAX(current.left)
-                if (current.left) {
-                    this.findMaximumBinaryTree(current.left);
-                }
-                // IF (current.right) --> findMAX(current.right)
-                if (current.right) {
-                    this.findMaximumBinaryTree(current.right);
-                }
-                // RETURN acc
-                while (this.stack.peek() !== -1) {
-                    return this.sum += this.stack.pop();
-                }
-            }
-        }
-        return this.sum;
+        return max;
     }
 
     // A preOrder method that traverses the tree using the pattern root >> left >> right and returns an array of the traversed values
