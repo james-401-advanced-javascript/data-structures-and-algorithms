@@ -9,6 +9,5 @@ tree.root.right = new Node('C');
 tree.root.left.left = new Node('D');
 tree.root.left.right = new Node('E');
 tree.root.right.left = new Node('F');
-tree.root.right.right = new Node('G');
 
 tree.breadthFirst();
