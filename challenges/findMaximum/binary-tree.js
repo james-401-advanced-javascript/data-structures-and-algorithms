@@ -38,58 +38,6 @@ class BinaryTree {
 
         return max;
     }
-
-    // A preOrder method that traverses the tree using the pattern root >> left >> right and returns an array of the traversed values
-    preOrder() {
-        let arr = [];
-        if (this.root) {
-            arr.push(this.root.value);
-        } else {
-            if (this.left) {
-                arr.push(this.preOrder(this.left));
-            }
-
-            if (this.right) {
-                arr.push(this.preOrder(this.right));
-            }
-        }
-        return arr;
-    }
-
-    // An inOrder method that traverses the tree using the pattern left >> root >> right and returns an array of the traversed values
-    inOrder() {
-        let arr = [];
-        if (this.left) {
-            arr.push(this.preOrder(this.left));
-        }
-
-        if (this.root) {
-            arr.push(this.root.value);
-        }
-
-        if (this.right) {
-            arr.push(this.preOrder(this.right));
-        }
-
-        return arr;
-    }
-
-    // A postOrder method that traverses the tree using the pattern left >> right >> root and returns an array of the traversed values
-    postOrder() {
-        let arr = [];
-        if (this.left) {
-            arr.push(this.preOrder(this.left));
-        }
-
-        if (this.right) {
-            arr.push(this.preOrder(this.right));
-        }
-
-        if (this.root) {
-            arr.push(this.root.value);
-        }
-        return arr;
-    }
 }
 
 module.exports = BinaryTree;
