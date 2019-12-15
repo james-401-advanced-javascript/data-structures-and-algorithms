@@ -18,7 +18,7 @@ class BinaryTree {
         if (this.root) {
             if (!this.root.seen) {
                 this.queue.enqueue(this.root);
-                this.seen = false;
+                this.seen = true;
             }
             // if (this.root.left) {
             //     this.queue.enqueue(this.root.left);

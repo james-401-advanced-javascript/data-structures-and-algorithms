@@ -11,8 +11,8 @@ class BinaryTree {
 
     // Find maximum value of all nodes within a numeric tree
     findMaximumBinaryTree() {
-         let max = 0;
-         // VAR seen = ARRAY
+        let max = 0;
+        // VAR seen = ARRAY
         // 1. Add root to queue
         this.queue.enqueue(this.root);
         // 2. While queue is NOT empty
