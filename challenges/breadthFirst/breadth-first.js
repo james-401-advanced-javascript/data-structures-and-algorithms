@@ -11,6 +11,5 @@ tree.root.left.right = new Node('E');
 tree.root.right.left = new Node('F');
 tree.root.right.right = new Node('G');
 
-console.log(tree);
 
 tree.breadthFirst();
