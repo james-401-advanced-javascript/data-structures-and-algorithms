@@ -2,7 +2,7 @@
 
 ## Links
 
-- [challenge 18](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/17)
+- [challenge 18](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/16)
 - [travis](https://www.travis-ci.com/james-401-advanced-javascript/data-structures-and-algorithms)
 
 - The point of this challenge is to search a Binary Tree, find the node with the largest numerical value, and return it.
@@ -36,15 +36,3 @@
 - BinaryTree.findMaximumBinaryTree()
 
   - This method takes in the node of a numeric Binary Tree, and returns the value of the node with the greatest numerical value
-
-- BinaryTree.preOrder()
-
-  - This method traverses the tree using the pattern root >> left >> right and returns an array of the traversed values.
-
-- BinaryTree.inOrder()
-
-  - This method traverses the tree using the pattern left >> root >> right and returns an array of the traversed values.
-
-- BinaryTree.postOrder()
-
-  - This method traverses the tree using the pattern left >> right >> root and returns an array of the traversed values.

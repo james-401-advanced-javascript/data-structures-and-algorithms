@@ -1,4 +1,4 @@
-const binarySearch = require('../array-binary-search.js');
+const binaryTree = require('../binary-tree');
 describe('Testing challenge', () => {
     it('it should return the index of the array’s element that is equal to the search key', () => {
         expect(binarySearch([4,8,15,16,23], 15)).toStrictEqual(2);

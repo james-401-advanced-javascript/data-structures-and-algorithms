@@ -16,7 +16,7 @@ class BinaryTree {
         // 1. Add root to queue
         this.queue.enqueue(this.root);
         // 2. While queue is NOT empty
-        while(this.queue.peek() !== -1) {
+        while (this.queue.peek() !== -1) {
             // A. var current = queue.dequeue()
             let current = this.queue.dequeue();
             // B. IF ![seen].contains(current) --> [seen].push(current) --> IF (current > max) --> max = current
@@ -41,51 +41,53 @@ class BinaryTree {
 
     // A preOrder method that traverses the tree using the pattern root >> left >> right and returns an array of the traversed values
     preOrder() {
-        let root = this.root;
         let arr = [];
-        arr.push(root.value);
+        if (this.root) {
+            arr.push(this.root.value);
+        } else {
+            if (this.left) {
+                arr.push(this.preOrder(this.left));
+            }
 
-        if (root.left) {
-            arr.push(...root.left.preOrder());
-        }
-
-        if (root.right) {
-            arr.push(...root.right.preOrder());
+            if (this.right) {
+                arr.push(this.preOrder(this.right));
+            }
         }
         return arr;
     }
 
     // An inOrder method that traverses the tree using the pattern left >> root >> right and returns an array of the traversed values
     inOrder() {
-        let root = this.root;
         let arr = [];
-
-        if (root.left) {
-            arr.push(...root.left.inOrder());
+        if (this.left) {
+            arr.push(this.preOrder(this.left));
         }
 
-        arr.push(root.value);
-
-        if (root.right) {
-            arr.push(...root.right.inOrder());
+        if (this.root) {
+            arr.push(this.root.value);
         }
+
+        if (this.right) {
+            arr.push(this.preOrder(this.right));
+        }
+
         return arr;
     }
 
     // A postOrder method that traverses the tree using the pattern left >> right >> root and returns an array of the traversed values
     postOrder() {
-        let root = this.root;
         let arr = [];
-
-        if (root.left) {
-            arr.push(...root.left.postOrder());
+        if (this.left) {
+            arr.push(this.preOrder(this.left));
         }
 
-        if (root.right) {
-            arr.push(...root.right.postOrder());
+        if (this.right) {
+            arr.push(this.preOrder(this.right));
         }
 
-        arr.push(root.value);
+        if (this.root) {
+            arr.push(this.root.value);
+        }
         return arr;
     }
 }
