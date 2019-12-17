@@ -9,7 +9,7 @@
 
 ## Whiteboard / Drawing
 
-![Insertion Sort](insertion-sort.jpg)
+![Insertion Sort](./images/insertion-sort.jpg)
 
 ## Challenge
 
