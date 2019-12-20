@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /*
 Write a function called mergeSort, which takes an array of numbers and returns a sorted array after using the Merge Sort algorithm. Do not mutate (change) the array given to you as a parameter.
@@ -6,11 +6,12 @@ Write a function called mergeSort, which takes an array of numbers and returns a
 
 function mergeSort(arr, sIndx, eIndx) {
     // If only one item in array, return;
-    if (arr.length <= 1) return;
+    if (sIndx >= eIndx) {
+        return;
+    }
 
     // Set value of midpoint that will separate split array
     let midpoint = Math.floor((sIndx + eIndx) / 2);
-    console.log(midpoint);
     mergeSort(arr, sIndx, midpoint);
     mergeSort(arr, midpoint + 1, eIndx);
     return merge(arr, sIndx, midpoint, eIndx);
@@ -19,8 +20,8 @@ function mergeSort(arr, sIndx, eIndx) {
 function merge(arr, sIndx, midpoint, eIndx) {
     let mergedArr = [];
     let j = midpoint + 1;
-    for (let i = 0; i <= midpoint; i++) {
-        while (arr[i] > arr[j] && j < arr.length) {
+    for (let i = sIndx; i <= midpoint; i++) {
+        while (arr[i] > arr[j] && j <= eIndx) {
             mergedArr.push(arr[j]);
             j++;
         }
@@ -34,6 +35,6 @@ function merge(arr, sIndx, midpoint, eIndx) {
 
 let testArr = [4, 2, 3, 1];
 
-let foo = mergeSort(testArr, 0, testArr.length - 1);
+let foo = mergeSort(testArr, 0, testArr.length);
 
 console.log(foo);
