@@ -2,7 +2,7 @@
 
 ## Links
 
-- [Challenge 19](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/18)
+- [Challenge 20](https://github.com/james-401-advanced-javascript/data-structures-and-algorithms/pull/18)
 - [travis](https://www.travis-ci.com/james-401-advanced-javascript/data-structures-and-algorithms)
 
 ### In this challenge, the task is to write an merge-sort algorithm
