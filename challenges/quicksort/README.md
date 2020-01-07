@@ -1,4 +1,4 @@
-# Code Challenge 17 - Breadth-First Traversal
+# Code Challenge 21 - Quicksort
 
 ## Links
 
