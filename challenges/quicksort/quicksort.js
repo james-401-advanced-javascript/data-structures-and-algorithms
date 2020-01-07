@@ -2,7 +2,16 @@
 
 // Write a function called quicksort, which takes an array of numbers and returns a sorted array after using the Quicksort algorithm. Do not mutate (change) the array given to you as a parameter.
 
-function quicksort([...arr], sIndx, eIndx) {
+function quicksort(arr, sIndx, eIndx) {
+    if (arr.constructor.name !== 'Array' || arr === undefined || !arr) {
+        return 'Must pass array to function';
+    }
+    if (!arr.length || arr.length < 1) {
+        return 'Array is empty';
+    }
+    if (!arr.every(item => item.constructor.name === 'Number')) {
+        return 'Array values must be numbers';
+    }
     function sortCopy(arr, sIndx, eIndx) {
         if (arr.length > 1) {
             let pivot = partition(arr, sIndx, eIndx);
@@ -11,7 +20,8 @@ function quicksort([...arr], sIndx, eIndx) {
         }
         return arr;
     }
-    return sortCopy(arr, sIndx, eIndx);
+    let inputArr = [...arr];
+    return sortCopy(inputArr, sIndx, eIndx);
 }
 
 function partition(arr, sIndx, eIndx) {
@@ -40,8 +50,4 @@ function swap(arr, left, right) {
     arr[right] = temp;
 }
 
-let arr = [1, 3, 5, 22, 150, 0, 80, 6, 14, 8, 12];
-
-let bar = quicksort(arr, 0, arr.length - 1);
-
-console.log(bar);
+module.exports = quicksort;
