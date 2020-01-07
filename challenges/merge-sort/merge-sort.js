@@ -5,16 +5,31 @@ Write a function called mergeSort, which takes an array of numbers and returns a
 */
 
 function mergeSort(arr, sIndx, eIndx) {
-    // If only one item in array, return;
-    if (sIndx >= eIndx) {
-        return;
+    if (arr.constructor.name !== 'Array' || arr === undefined || !arr) {
+        return 'Must pass array to function';
     }
+    if (!arr.length || arr.length < 1) {
+        return 'Array is empty';
+    }
+    if (!arr.every(item => item.constructor.name === 'Number')) {
+        return 'Array values must be numbers';
+    }
+    function mergeCopy(arr, sIndx, eIndx) {
+    // If only one item in array, return;
+        if (sIndx >= eIndx) {
+            return;
+        }
 
-    // Set value of midpoint that will separate split array
-    let midpoint = Math.floor((sIndx + eIndx) / 2);
-    mergeSort(arr, sIndx, midpoint);
-    mergeSort(arr, midpoint + 1, eIndx);
-    return merge(arr, sIndx, midpoint, eIndx);
+        // Set value of midpoint that will separate split array
+        if (arr.length >= 1) {
+            let midpoint = Math.floor((sIndx + eIndx) / 2);
+            mergeCopy(arr, sIndx, midpoint);
+            mergeCopy(arr, midpoint + 1, eIndx);
+            return merge(arr, sIndx, midpoint, eIndx);
+        }
+    }
+    let inputArr = [...arr];
+    return mergeCopy(inputArr, sIndx, eIndx);
 }
 
 function merge(arr, sIndx, midpoint, eIndx) {
@@ -33,8 +48,4 @@ function merge(arr, sIndx, midpoint, eIndx) {
     return mergedArr;
 }
 
-let testArr = [4, 2, 3, 1];
-
-let foo = mergeSort(testArr, 0, testArr.length);
-
-console.log(foo);
+module.exports = mergeSort;
