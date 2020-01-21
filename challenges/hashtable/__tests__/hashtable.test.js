@@ -2,12 +2,12 @@
 let HashTable = require('../hashtable');
 
 describe('The correct functionality of a HashTable', () => {
-    it ('Adding a key/value to your hashtable results in the value being in the data structure', () => {
+    it ('Successfully adds a key/value to your hashtable results in the value being in the data structure', () => {
         let table = new HashTable(5);
         table.add('James', 'student');
         expect(table.contains('James')).toBe(true);
     });
-    it ('Retrieving based on a key returns the value stored', () => {
+    it ('Successfully retrieves based on a key returns the value stored', () => {
         let table = new HashTable(5);
         table.add('James', 'student');
         expect(table.get('James')).toMatch('student');
