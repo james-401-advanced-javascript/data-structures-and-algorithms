@@ -47,7 +47,7 @@
 
 - HashTable.get(string)
 
-  - This function takes in a string. The index of the string is determined by hashing the string. Then a search for the index number with that string/key name is performed. If the key is found within that index number, its value is returned. If it's not found, a false boolean is returned
+  - This function takes in a string. The index of the string is determined by hashing the string. Then a search for the index number with that string/key name is performed. If the key is found within that index number, its value is returned. If it's not found, a value of null is returned
 
 - HashTable.contains(string)
 

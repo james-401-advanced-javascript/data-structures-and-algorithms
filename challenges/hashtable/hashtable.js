@@ -25,7 +25,7 @@ class HashTable {
             for (var i = 0; i < this.storage[index].length; i++) {
                 // if key already exists in storage array
                 // update value with value passed in
-                if (this.storage[index][i][0] === key) {
+                if (this.storage[index][i] && this.storage[index][i][0] === key) {
                     this.storage[index][i][1] = value;
                     inserted = true;
                 }
@@ -50,7 +50,7 @@ class HashTable {
         // loop through array and delete item if present
         let removed = false;
         for (let i = 0; i < this.storage[index].length; i++) {
-            if (this.storage[index][i][0] === key) {
+            if (this.storage[index][i] && this.storage[index][i][0] === key) {
                 delete this.storage[index][i];
                 removed = true;
             } 
@@ -64,16 +64,16 @@ class HashTable {
         // remove that item
         let index = this.hash(key);
         if (this.storage[index] === undefined) {
-            return false;
+            return null;
         }
         // if index exists, and has more than 1 item
         // loop through array and delete item if present
         for (let i = 0; i < this.storage[index].length; i++) {
-            if (this.storage[index][i][0] === key) {
+            if (this.storage[index][i] && this.storage[index][i][0] === key) {
                 return this.storage[index][i][1];
             } 
         }
-        return -1;
+        return null;
     }
   
     // write contains function
@@ -85,7 +85,7 @@ class HashTable {
         // if index exists, and has more than 1 item
         // loop through array and delete item if present
         for (let i = 0; i < this.storage[index].length; i++) {
-            if (this.storage[index][i][0] === key) {
+            if (this.storage[index][i] && this.storage[index][i][0] === key) {
                 return true;
             } 
         }
@@ -100,6 +100,12 @@ class HashTable {
 }
   
 // let hTable1 = new HashTable(5);
+
+// let table = new HashTable(5);
+// table.add('Dean', 'student');
+// table.add('Dane', 'student');
+// table.add('James', 'instructor');
+// console.log(table.print());
 
 module.exports = HashTable;
   
