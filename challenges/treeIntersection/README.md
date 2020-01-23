@@ -1,4 +1,4 @@
-# Code Challenge 25 - Repeated Word
+# Code Challenge 27 - Tree Intersection
 
 ## Links
 
