@@ -15,41 +15,28 @@ function leftJoin(table1, table2) {
     }
     
     let left = table1.storage.filter(item => item !== undefined);
-    let right = table2.storage.filter(item => item !== undefined);
-    // loop through tables for length of loopCount
+
     for (let i = 0; i < left.length; i++) {
-        // create two scenarios
-        // IF currentVal is not in table2
-        // THEN push currentVal, and move on to next iteration
-        if (left[i]) {
-            if (left[i].length === 1) {
-                joined[i].push(left[i]);
-                console.log('lEFTY: ',left);
-                if (!table2.contains(left[i][0])) {
-                    continue;
-                }
+        if (left[i].length === 1) {
+            let index = left[i][0];
+            joined.push(index);
+            if (table2.contains(index[0])) {
+                let match = table2.get(index[0]);
+                joined[joined.indexOf(index)].push(match);
             } else {
-                // IF currentVal IS in table2
-                // THEN add its 'get' value to current index in joined array
-                console.log('ITEM: ',left[i]);
-                console.log('JOINED: ',joined);
-                for (let j of left[i]) {
-                    console.log('J ',j);
-                    console.log(j[0]);
-                    joined.push(j);
-                    if (table2.contains(j[0])) {
-                        joined[i].push(table2.get(j[0]));
-                    }
+                joined[joined.indexOf(index)].push(null);
+            }
+        }    else {
+            for (let j in left[i]) {
+                let index = left[i][j];
+                joined.push(index);
+                if (table2.contains(index[0])) {
+                    joined[j].push(table2.get(index[0]));
+                } else {
+                    joined[joined.indexOf(index)].push(null);
                 }
             }
         }
-
-        // SCRATCH ALL OF THIS. 
-        // LOOP THROUGH FIRST TABLE
-        // PUSH ALL ITEMS TO ARRAY
-        // FOR EACH ITEM IN THE TABLE.
-        // IF table2.contains?
-        // PUSH table2.get() to that index in the array
     }
     return joined;
 }
