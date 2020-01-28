@@ -12,106 +12,107 @@ describe('The correct functionality of left-join', () => {
         const table1 = new HashTable(10);
         const table2 = new HashTable(10);
 
-        table1.add('one', 1);
-        table1.add('two', 2);
-        table1.add('three', 3);
+        table1.add('fond', 'enamored');
+        table1.add('wrath', 'anger');
+        table1.add('diligent', 'employed');
 
-        table2.add('cat', 11);
-        table2.add('dog', 22);
-        table2.add('parrot', 33);
+        table2.add('cat', 'feline');
+        table2.add('dog', 'canine');
+        table2.add('parrot', 'bird');
 
-        expect(leftJoin(table1, table2)).toEqual([['one', 1, null], ['two', 2, null], ['three', 3, null]]);
+        expect(leftJoin(table1, table2)).toEqual([
+            [ 'wrath', 'anger', null ],
+            [ 'fond', 'enamored', null ],
+            [ 'diligent', 'employed', null ],
+        ]);
     });
     it('Hash table where “left” table has a null value where “right” table does', () => {
         const table1 = new HashTable(10);
         const table2 = new HashTable(10);
 
-        table1.add('one', 1);
-        table1.add('two', null);
-        table1.add('three', 3);
+        table1.add('fond', 'enamored');
+        table1.add('wrath', null);
+        table1.add('diligent', 'employed');
 
-        table2.add('cat', 11);
-        table2.add('two', null);
-        table2.add('parrot', 33);
+        table2.add('cat', 'feline');
+        table2.add('wrath', null);
+        table2.add('parrot', 'bird');
 
-        expect(leftJoin(table1, table2)).toEqual([['one', 1, null], ['two', null, null], ['three', 3, null]]);
+        expect(leftJoin(table1, table2)).toEqual([
+            [ 'wrath', null, null ],
+            [ 'fond', 'enamored', null ],
+            [ 'diligent', 'employed', null ],
+        ]);
     });
     it('Hash tables of varying sizes, “left” table is smaller than the “right” table', () => {
         const table1 = new HashTable(10);
         const table2 = new HashTable(10);
 
-        table1.add('one', 'anotha');
-        table1.add('two', null);
-        table1.add('three', 3);
+        table1.add('fond', 'enamored');
+        table1.add('wrath', 'anger');
 
-        table2.add('cat', 11);
-        table2.add('two', null);
-        table2.add('parrot', 33);
-        table2.add('three', 'walrus');
-        table2.add('one', 1);
+        table2.add('fond', 'averse');
+        table2.add('dog', 'canine');
+        table2.add('parrot', 'bird');
 
-        expect(leftJoin(table1, table2)).toEqual([
-            [ 'one', 'anotha', 1 ],
-            [ 'two', null, null ],
-            [ 'three', 3, 'walrus' ],
-        ]);
+        expect(leftJoin(table1, table2)).toEqual([ [ 'wrath', 'anger', null ], [ 'fond', 'enamored', 'averse' ] ]);
     });
     it('Hash tables of varying sizes, “right” table is smaller than the “left” table', () => {
         const table1 = new HashTable(10);
         const table2 = new HashTable(10);
 
-        table1.add('one', 'anotha');
-        table1.add('two', null);
-        table1.add('three', 3);
-        table1.add('cat', 11);
-        table1.add('parrot', null);
+        table1.add('fond', 'enamored');
+        table1.add('wrath', 'anger');
+        table1.add('diligent', 'employed');
 
-        table2.add('parrot', 33);
-        table2.add('three', 'walrus');
-        table2.add('one', 1);
+        table2.add('fond', 'averse');
 
         expect(leftJoin(table1, table2)).toEqual([
-            [ 'one', 'anotha', 1 ],
-            [ 'cat', 11, null ],
-            [ 'parrot', null, 33 ],
-            [ 'two', null, null ],
-            [ 'three', 3, 'walrus' ],
+            [ 'wrath', 'anger', null ],
+            [ 'fond', 'enamored', 'averse' ],
+            [ 'diligent', 'employed', null ],
         ]);
     });
     it('Hash table with same sizes', () => {
         const table1 = new HashTable(10);
         const table2 = new HashTable(10);
 
-        table1.add('one', 1);
-        table1.add('two', 2);
-        table1.add('three', 3);
+        table1.add('fond', 'enamored');
+        table1.add('wrath', 'anger');
+        table1.add('diligent', 'employed');
 
-        table2.add('one', 11);
-        table2.add('two', 22);
-        table2.add('three', 33);
+        table2.add('fond', 'averse');
+        table2.add('wrath', 'delight');
+        table2.add('diligent', 'idle');
 
-        expect(leftJoin(table1, table2)).toEqual([ [ 'one', 1, 11 ], [ 'two', 2, 22 ], [ 'three', 3, 33 ] ]);
+        expect(leftJoin(table1, table2)).toEqual([
+            [ 'wrath', 'anger', 'delight' ],
+            [ 'fond', 'enamored', 'averse' ],
+            [ 'diligent', 'employed', 'idle' ],
+        ]);
     });
     it('Hash table with collision', () => {
         const table1 = new HashTable(3);
         const table2 = new HashTable(3);
         
-        table1.add('one', 1);
-        table1.add('two', 2);
-        table1.add('three', 3);
-        table1.add('four', 4);
-        table1.add('five', 5);
+        table1.add('fond', 'enamored');
+        table1.add('wrath', 'anger');
+        table1.add('diligent', 'employed');
+        table1.add('mad', 'angry');
+        table1.add('cold', 'freezing');
 
-        table2.add('one', 11);
-        table2.add('two', 22);
-        table2.add('three', 33);
+        table2.add('fond', 'averse');
+        table2.add('wrath', 'delight');
+        table2.add('diligent', 'idle');
+        table2.add('mad', 'calm');
+        table2.add('cold', 'hot');
 
         expect(leftJoin(table1, table2)).toEqual([
-            [ 'four', 4, null ],
-            [ 'five', 5, null ],
-            [ 'one', 1, 11 ],
-            [ 'two', 2, 22 ],
-            [ 'three', 3, 33 ],
+            [ 'fond', 'enamored', 'averse' ],
+            [ 'mad', 'angry', 'calm' ],
+            [ 'wrath', 'anger', 'delight' ],
+            [ 'cold', 'freezing', 'hot' ],
+            [ 'diligent', 'employed', 'idle' ],
         ]);
     });
 });

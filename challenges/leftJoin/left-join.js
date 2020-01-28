@@ -1,7 +1,5 @@
 'use strict';
 
-const HashTable = require('./hashtable');
-
 function leftJoin(table1, table2) {
     // Create array of return values
     const joined = [];
